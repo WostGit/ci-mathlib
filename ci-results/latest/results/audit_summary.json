@@ -1,0 +1,5 @@
+{
+  "population_size": 120,
+  "deterministic_student_minus_transcript_simulator_success": 0,
+  "auxiliary_student_minus_transcript_simulator_success": 20
+}
