@@ -6,6 +6,10 @@ on:
     branches: [main, master]
   pull_request:
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   pacxai-artifact:
     runs-on: ubuntu-latest
@@ -14,12 +18,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install system dependencies
         run: |
           set -euxo pipefail
           sudo apt-get update
-          sudo apt-get install -y curl git python3 unzip zip
+          sudo apt-get install -y curl git python3 unzip zip jq
 
       - name: Restore embedded PACXAI project if bootstrap exists
         run: |
@@ -50,13 +56,13 @@ jobs:
             elan toolchain install "$TOOLCHAIN"
           fi
           elan default "$TOOLCHAIN"
-          lean --version
-          lake --version
+          lean --version | tee lean-version.log
+          lake --version | tee lake-version.log
 
       - name: Show project files
         run: |
           set -euxo pipefail
-          find . -maxdepth 4 -type f | sort | sed 's#^./##'
+          find . -maxdepth 4 -type f | sort | sed 's#^./##' | tee project-files.log
 
       - name: Build Lean project
         run: |
@@ -90,15 +96,62 @@ jobs:
             echo "No case-study script found." | tee case-study.log
           fi
 
+      - name: Prepare committed CI results
+        if: always()
+        run: |
+          set -euxo pipefail
+          rm -rf ci-results/latest
+          mkdir -p ci-results/latest
+          cp lean-version.log ci-results/latest/ 2>/dev/null || true
+          cp lake-version.log ci-results/latest/ 2>/dev/null || true
+          cp project-files.log ci-results/latest/ 2>/dev/null || true
+          cp lean-build.log ci-results/latest/ 2>/dev/null || true
+          cp lean-audit.log ci-results/latest/ 2>/dev/null || true
+          cp case-study.log ci-results/latest/ 2>/dev/null || true
+          if [ -d results ]; then
+            mkdir -p ci-results/latest/results
+            cp -R results/. ci-results/latest/results/
+          fi
+          cat > ci-results/latest/summary.md <<EOF
+          # PACXAI CI latest results
+
+          - Workflow: ${GITHUB_WORKFLOW}
+          - Run id: ${GITHUB_RUN_ID}
+          - Run attempt: ${GITHUB_RUN_ATTEMPT}
+          - Commit: ${GITHUB_SHA}
+          - Generated at: $(date -u +%Y-%m-%dT%H:%M:%SZ)
+
+          See logs in this directory.
+          EOF
+          find ci-results/latest -type f | sort
+
+      - name: Commit CI results back to repo
+        if: always() && github.event_name != 'pull_request'
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ci-results/latest
+          if git diff --cached --quiet; then
+            echo "No CI result changes to commit."
+          else
+            git commit -m "ci: update latest PACXAI results [skip ci]"
+            git push
+          fi
+
       - name: Upload logs and results
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: pacxai-ci-logs-and-results
           path: |
+            lean-version.log
+            lake-version.log
+            project-files.log
             lean-build.log
             lean-audit.log
             case-study.log
             results/**
+            ci-results/latest/**
           if-no-files-found: ignore
           retention-days: 14
