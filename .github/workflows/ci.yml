@@ -1,0 +1,104 @@
+name: PACXAI CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  pacxai-artifact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install system dependencies
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y curl git python3 unzip zip
+
+      - name: Restore embedded PACXAI project if bootstrap exists
+        run: |
+          set -euxo pipefail
+          if [ -f restore_project.py ]; then
+            python3 restore_project.py
+          else
+            echo "No restore_project.py found; assuming project files are already committed."
+          fi
+
+      - name: Install elan / Lean
+        run: |
+          set -euxo pipefail
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Install selected Lean toolchain
+        run: |
+          set -euxo pipefail
+          if [ ! -f lean-toolchain ]; then
+            echo "leanprover/lean4:v4.30.0-rc2" > lean-toolchain
+          fi
+          TOOLCHAIN="$(cat lean-toolchain)"
+          if elan toolchain list | grep -Fxq "$TOOLCHAIN"; then
+            echo "Toolchain already installed: $TOOLCHAIN"
+          else
+            elan toolchain install "$TOOLCHAIN"
+          fi
+          elan default "$TOOLCHAIN"
+          lean --version
+          lake --version
+
+      - name: Show project files
+        run: |
+          set -euxo pipefail
+          find . -maxdepth 4 -type f | sort | sed 's#^./##'
+
+      - name: Build Lean project
+        run: |
+          set -euxo pipefail
+          lake build 2>&1 | tee lean-build.log
+
+      - name: Run Lean forbidden-token audit
+        run: |
+          set -euxo pipefail
+          if [ -f scripts/audit.sh ]; then
+            bash scripts/audit.sh 2>&1 | tee lean-audit.log
+          else
+            ! grep -RIn --include='*.lean' \
+              -e '\bsorry\b' \
+              -e '\badmit\b' \
+              -e '\baxiom\b' \
+              -e '\bconstant\b' \
+              -e '\bunsafe\b' \
+              -e '\bopaque\b' \
+              -e 'TODO' \
+              -e 'FIXME' \
+              -- PACXAI PACXAI.lean lakefile.lean 2>&1 | tee lean-audit.log
+          fi
+
+      - name: Run distillation audit case study
+        run: |
+          set -euxo pipefail
+          if [ -f experiments/run_distillation_audit.py ]; then
+            python3 experiments/run_distillation_audit.py 2>&1 | tee case-study.log
+          else
+            echo "No case-study script found." | tee case-study.log
+          fi
+
+      - name: Upload logs and results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pacxai-ci-logs-and-results
+          path: |
+            lean-build.log
+            lean-audit.log
+            case-study.log
+            results/**
+          if-no-files-found: ignore
+          retention-days: 14
