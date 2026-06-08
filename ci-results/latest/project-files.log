@@ -20,9 +20,9 @@
 .git/index
 .git/info/exclude
 .git/logs/HEAD
-.git/objects/pack/pack-cbfc89059087ab636e7473efb50e8ed191a61344.idx
-.git/objects/pack/pack-cbfc89059087ab636e7473efb50e8ed191a61344.pack
-.git/objects/pack/pack-cbfc89059087ab636e7473efb50e8ed191a61344.rev
+.git/objects/pack/pack-2cbcd1dea85aa00056d8c6e108e63384b963bec6.idx
+.git/objects/pack/pack-2cbcd1dea85aa00056d8c6e108e63384b963bec6.pack
+.git/objects/pack/pack-2cbcd1dea85aa00056d8c6e108e63384b963bec6.rev
 .git/refs/heads/main
 .github/workflows/ci.yml
 BEGINNER_GUIDE.md
@@ -34,6 +34,7 @@ PACXAI/Leakage/FiniteCapacity.lean
 PACXAI/Recovery.lean
 PACXAI/Transcript.lean
 README.md
+THREAT_MODEL.md
 ci-results/latest/lake-version.log
 ci-results/latest/lean-build.log
 ci-results/latest/lean-version.log
@@ -44,5 +45,4 @@ lake-version.log
 lakefile.lean
 lean-toolchain
 lean-version.log
-project-files.log
 scripts/audit.sh
