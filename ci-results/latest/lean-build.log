@@ -1,5 +1,5 @@
 info: pacxai_ci_mathlib: no previous manifest, creating one from scratch
 info: toolchain not updated; already up-to-date
-✔ [2/4] Built PACXAI.Core (274ms)
-✔ [3/4] Built PACXAI (208ms)
+✔ [2/4] Built PACXAI.Core (260ms)
+✔ [3/4] Built PACXAI (192ms)
 Build completed successfully (4 jobs).
