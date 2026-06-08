@@ -1,5 +1,0 @@
-[audit] forbidden token scan
-No forbidden tokens found
-[audit] theorem check
-'PACXAI.postprocess_successCount_eq' does not depend on any axioms
-'PACXAI.distilled_student_attack_is_transcript_attack' does not depend on any axioms
