@@ -20,11 +20,12 @@
 .git/index
 .git/info/exclude
 .git/logs/HEAD
-.git/objects/pack/pack-a3ad79b10225795899edf317d5a8f7b7dafbcbe4.idx
-.git/objects/pack/pack-a3ad79b10225795899edf317d5a8f7b7dafbcbe4.pack
-.git/objects/pack/pack-a3ad79b10225795899edf317d5a8f7b7dafbcbe4.rev
+.git/objects/pack/pack-278b68557c1eb7c766d486f24e172751b68cbb68.idx
+.git/objects/pack/pack-278b68557c1eb7c766d486f24e172751b68cbb68.pack
+.git/objects/pack/pack-278b68557c1eb7c766d486f24e172751b68cbb68.rev
 .git/refs/heads/main
 .github/workflows/ci.yml
+ARTIFACT_EVALUATION_README.md
 ASSUMPTION_BUG_DEMONSTRATION.md
 BEGINNER_GUIDE.md
 PACXAI.lean
