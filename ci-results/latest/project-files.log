@@ -20,9 +20,9 @@
 .git/index
 .git/info/exclude
 .git/logs/HEAD
-.git/objects/pack/pack-9f8c4f6a6b3c210d0985fee813761a9b432c6a8b.idx
-.git/objects/pack/pack-9f8c4f6a6b3c210d0985fee813761a9b432c6a8b.pack
-.git/objects/pack/pack-9f8c4f6a6b3c210d0985fee813761a9b432c6a8b.rev
+.git/objects/pack/pack-15789fc1434343a05df0a1a18322b78f7018a22c.idx
+.git/objects/pack/pack-15789fc1434343a05df0a1a18322b78f7018a22c.pack
+.git/objects/pack/pack-15789fc1434343a05df0a1a18322b78f7018a22c.rev
 .git/refs/heads/main
 .github/workflows/ci.yml
 ARTIFACT_EVALUATION_README.md
@@ -32,6 +32,7 @@ PACXAI.lean
 PACXAI/Conditioning.lean
 PACXAI/Core.lean
 PACXAI/Distillation.lean
+PACXAI/InfoTheory/DPI.lean
 PACXAI/InfoTheory/FiniteDistribution.lean
 PACXAI/Leakage/FiniteCapacity.lean
 PACXAI/Recovery.lean
