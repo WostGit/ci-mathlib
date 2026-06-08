@@ -20,11 +20,12 @@
 .git/index
 .git/info/exclude
 .git/logs/HEAD
-.git/objects/pack/pack-746023c57190b9b663608d7a7343d10885d74314.idx
-.git/objects/pack/pack-746023c57190b9b663608d7a7343d10885d74314.pack
-.git/objects/pack/pack-746023c57190b9b663608d7a7343d10885d74314.rev
+.git/objects/pack/pack-cbfc89059087ab636e7473efb50e8ed191a61344.idx
+.git/objects/pack/pack-cbfc89059087ab636e7473efb50e8ed191a61344.pack
+.git/objects/pack/pack-cbfc89059087ab636e7473efb50e8ed191a61344.rev
 .git/refs/heads/main
 .github/workflows/ci.yml
+BEGINNER_GUIDE.md
 PACXAI.lean
 PACXAI/Conditioning.lean
 PACXAI/Core.lean
@@ -43,4 +44,5 @@ lake-version.log
 lakefile.lean
 lean-toolchain
 lean-version.log
+project-files.log
 scripts/audit.sh
