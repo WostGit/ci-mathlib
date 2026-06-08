@@ -4,6 +4,10 @@ import PACXAI.Recovery
 import PACXAI.Conditioning
 import PACXAI.Distillation
 import PACXAI.Leakage.FiniteCapacity
+import PACXAI.InfoTheory.FiniteDistribution
+import PACXAI.InfoTheory.DPI
+import PACXAI.InfoTheory.FanoStyle
+import PACXAI.PAC.MonteCarlo
 
 namespace PACXAI
 
