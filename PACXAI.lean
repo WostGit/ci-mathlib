@@ -1,4 +1,9 @@
 import PACXAI.Core
+import PACXAI.Transcript
+import PACXAI.Recovery
+import PACXAI.Conditioning
+import PACXAI.Distillation
+import PACXAI.Leakage.FiniteCapacity
 
 namespace PACXAI
 
