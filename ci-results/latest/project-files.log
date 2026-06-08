@@ -20,9 +20,9 @@
 .git/index
 .git/info/exclude
 .git/logs/HEAD
-.git/objects/pack/pack-c7569c91221e592ebdb5ab03649f626a8fc3151a.idx
-.git/objects/pack/pack-c7569c91221e592ebdb5ab03649f626a8fc3151a.pack
-.git/objects/pack/pack-c7569c91221e592ebdb5ab03649f626a8fc3151a.rev
+.git/objects/pack/pack-a3ad79b10225795899edf317d5a8f7b7dafbcbe4.idx
+.git/objects/pack/pack-a3ad79b10225795899edf317d5a8f7b7dafbcbe4.pack
+.git/objects/pack/pack-a3ad79b10225795899edf317d5a8f7b7dafbcbe4.rev
 .git/refs/heads/main
 .github/workflows/ci.yml
 ASSUMPTION_BUG_DEMONSTRATION.md
@@ -35,6 +35,7 @@ PACXAI/Leakage/FiniteCapacity.lean
 PACXAI/Recovery.lean
 PACXAI/Transcript.lean
 README.md
+S_AND_P_POSITIONING.md
 THREAT_MODEL.md
 ci-results/latest/lake-version.log
 ci-results/latest/lean-build.log
