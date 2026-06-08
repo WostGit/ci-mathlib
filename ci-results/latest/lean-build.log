@@ -1,8 +1,13 @@
 info: pacxai_ci_mathlib: no previous manifest, creating one from scratch
 info: toolchain not updated; already up-to-date
-✔ [2/9] Built PACXAI.Core (302ms)
-✔ [3/9] Built PACXAI.Transcript (319ms)
-⚠ [4/9] Built PACXAI.Recovery (375ms)
+✔ [2/9] Built PACXAI.Core (286ms)
+✖ [3/9] Building PACXAI.Leakage.FiniteCapacity (307ms)
+trace: .> LEAN_PATH=/home/runner/work/ci-mathlib/ci-mathlib/.lake/build/lib/lean /home/runner/.elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lean /home/runner/work/ci-mathlib/ci-mathlib/PACXAI/Leakage/FiniteCapacity.lean -o /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/lib/lean/PACXAI/Leakage/FiniteCapacity.olean -i /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/lib/lean/PACXAI/Leakage/FiniteCapacity.ilean -c /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/ir/PACXAI/Leakage/FiniteCapacity.c --setup /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/ir/PACXAI/Leakage/FiniteCapacity.setup.json --json
+error: PACXAI/Leakage/FiniteCapacity.lean:13:66: unexpected token 'universe'; expected '_' or identifier
+error: PACXAI/Leakage/FiniteCapacity.lean:13:74: unexpected token ':'; expected identifier
+error: Lean exited with code 1
+✔ [4/9] Built PACXAI.Transcript (397ms)
+⚠ [5/9] Built PACXAI.Recovery (338ms)
 warning: PACXAI/Recovery.lean:54:124: This simp argument is unused:
   ih
 
@@ -11,13 +16,8 @@ Hint: Omit it from the simp argument list.
   ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲successCount, countWhere,̵ ̵i̵h̵]
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-✖ [5/9] Building PACXAI.Leakage.FiniteCapacity (340ms)
-trace: .> LEAN_PATH=/home/runner/work/ci-mathlib/ci-mathlib/.lake/build/lib/lean /home/runner/.elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lean /home/runner/work/ci-mathlib/ci-mathlib/PACXAI/Leakage/FiniteCapacity.lean -o /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/lib/lean/PACXAI/Leakage/FiniteCapacity.olean -i /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/lib/lean/PACXAI/Leakage/FiniteCapacity.ilean -c /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/ir/PACXAI/Leakage/FiniteCapacity.c --setup /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/ir/PACXAI/Leakage/FiniteCapacity.setup.json --json
-error: PACXAI/Leakage/FiniteCapacity.lean:13:66: unexpected token 'universe'; expected '_' or identifier
-error: PACXAI/Leakage/FiniteCapacity.lean:13:74: unexpected token ':'; expected identifier
-error: Lean exited with code 1
-✔ [6/9] Built PACXAI.Conditioning (233ms)
-✔ [7/9] Built PACXAI.Distillation (264ms)
+✔ [6/9] Built PACXAI.Conditioning (230ms)
+✔ [7/9] Built PACXAI.Distillation (248ms)
 Some required targets logged failures:
 - PACXAI.Leakage.FiniteCapacity
 error: build failed
