@@ -12,14 +12,13 @@ def sumBy {A : Type} (f : A -> Nat) : List A -> Nat
 structure FiniteDist (A : Type) where
   support : List A
   mass : A -> Nat
-  deriving Repr
 
 /-- Total mass of a finite natural-weight distribution. -/
 def totalMass {A : Type} (p : FiniteDist A) : Nat :=
   sumBy p.mass p.support
 
 /-- Push a finite distribution through a deterministic map.  The support may contain duplicates; this is fine for the count-based theorems here. -/
-def mapDist {A B : Type} (f : A -> B) (p : FiniteDist A) : FiniteDist B where
+def mapDist {A B : Type} [BEq B] (f : A -> B) (p : FiniteDist A) : FiniteDist B where
   support := p.support.map f
   mass := fun b => sumBy (fun a => if f a == b then p.mass a else 0) p.support
 
