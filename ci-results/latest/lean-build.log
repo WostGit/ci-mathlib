@@ -1,7 +1,8 @@
 info: pacxai_ci_mathlib: no previous manifest, creating one from scratch
 info: toolchain not updated; already up-to-date
-✔ [2/13] Built PACXAI.Core (317ms)
-⚠ [3/13] Built PACXAI.Recovery (472ms)
+✔ [2/13] Built PACXAI.Core (267ms)
+✔ [3/13] Built PACXAI.Transcript (418ms)
+⚠ [4/13] Built PACXAI.Recovery (411ms)
 warning: PACXAI/Recovery.lean:54:124: This simp argument is unused:
   ih
 
@@ -10,13 +11,12 @@ Hint: Omit it from the simp argument list.
   ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲successCount, countWhere,̵ ̵i̵h̵]
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-✔ [4/13] Built PACXAI.Leakage.FiniteCapacity (412ms)
-✔ [5/13] Built PACXAI.Transcript (517ms)
-✔ [6/13] Built PACXAI.InfoTheory.FiniteDistribution (491ms)
-✔ [7/13] Built PACXAI.Conditioning (266ms)
-✔ [8/13] Built PACXAI.InfoTheory.DPI (275ms)
-✔ [9/13] Built PACXAI.Distillation (317ms)
-✔ [10/13] Built PACXAI.InfoTheory.FanoStyle (411ms)
-✔ [11/13] Built PACXAI.PAC.MonteCarlo (439ms)
-✔ [12/13] Built PACXAI (237ms)
+✔ [5/13] Built PACXAI.Leakage.FiniteCapacity (382ms)
+✔ [6/13] Built PACXAI.InfoTheory.FiniteDistribution (393ms)
+✔ [7/13] Built PACXAI.Conditioning (229ms)
+✔ [8/13] Built PACXAI.InfoTheory.DPI (247ms)
+✔ [9/13] Built PACXAI.Distillation (355ms)
+✔ [10/13] Built PACXAI.InfoTheory.FanoStyle (354ms)
+✔ [11/13] Built PACXAI.PAC.MonteCarlo (323ms)
+✔ [12/13] Built PACXAI (193ms)
 Build completed successfully (13 jobs).

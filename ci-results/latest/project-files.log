@@ -20,9 +20,9 @@
 .git/index
 .git/info/exclude
 .git/logs/HEAD
-.git/objects/pack/pack-aa10fc81fc86256002d1d8a6f2464f7b626e49e1.idx
-.git/objects/pack/pack-aa10fc81fc86256002d1d8a6f2464f7b626e49e1.pack
-.git/objects/pack/pack-aa10fc81fc86256002d1d8a6f2464f7b626e49e1.rev
+.git/objects/pack/pack-03349101f6284f63e8dad083cb1ee617f1fbd37f.idx
+.git/objects/pack/pack-03349101f6284f63e8dad083cb1ee617f1fbd37f.pack
+.git/objects/pack/pack-03349101f6284f63e8dad083cb1ee617f1fbd37f.rev
 .git/refs/heads/main
 .github/workflows/ci.yml
 ARTIFACT_EVALUATION_README.md
@@ -42,10 +42,14 @@ PACXAI/Transcript.lean
 README.md
 S_AND_P_POSITIONING.md
 THREAT_MODEL.md
+ci-results/latest/case-study.log
 ci-results/latest/lake-version.log
+ci-results/latest/lean-audit.log
 ci-results/latest/lean-build.log
 ci-results/latest/lean-version.log
 ci-results/latest/project-files.log
+ci-results/latest/results/audit_results.csv
+ci-results/latest/results/audit_summary.json
 ci-results/latest/summary.md
 experiments/run_distillation_audit.py
 lake-version.log
