@@ -3,15 +3,15 @@ import PACXAI.Core
 namespace PACXAI
 namespace Leakage
 
-/-- Finite output-cover leakage: how many distinct outputs appear on the audited population. -/
+/-- Finite output-cover leakage: whether an output appears on the audited population. -/
 def appears {Secret Out : Type} [BEq Out]
     (secrets : Population Secret) (obs : Observation Secret Out) (y : Out) : Bool :=
   secrets.any (fun s => obs s == y)
 
-/-- Count distinct outputs by filtering a supplied universe of possible outputs. -/
+/-- Count distinct outputs by filtering a supplied finite list of possible outputs. -/
 def outputCoverSize {Secret Out : Type} [BEq Out]
-    (secrets : Population Secret) (obs : Observation Secret Out) (universe : List Out) : Nat :=
-  (universe.filter (appears secrets obs)).length
+    (secrets : Population Secret) (obs : Observation Secret Out) (outputs : List Out) : Nat :=
+  (outputs.filter (appears secrets obs)).length
 
 /-- Cartesian product of two finite lists. -/
 def cartesian {A B : Type} : List A -> List B -> List (A × B)
