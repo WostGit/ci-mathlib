@@ -51,7 +51,7 @@ theorem candidateScores_postprocess_eq {Secret Raw Out Guess : Type}
   induction candidates with
   | nil => rfl
   | cons a rest ih =>
-      simp [candidateScores, liftCandidateClass, observedSuccessCount, postprocess, liftedAttack, successCount, countWhere, ih]
+      simp [candidateScores, liftCandidateClass, observedSuccessCount, postprocess, liftedAttack, successCount, countWhere]
 
 /-- Candidate-best success is exactly preserved when the raw candidate class contains the lifted attacks. -/
 theorem candidateBest_postprocess_eq_lifted {Secret Raw Out Guess : Type}
