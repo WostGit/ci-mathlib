@@ -20,9 +20,9 @@
 .git/index
 .git/info/exclude
 .git/logs/HEAD
-.git/objects/pack/pack-03349101f6284f63e8dad083cb1ee617f1fbd37f.idx
-.git/objects/pack/pack-03349101f6284f63e8dad083cb1ee617f1fbd37f.pack
-.git/objects/pack/pack-03349101f6284f63e8dad083cb1ee617f1fbd37f.rev
+.git/objects/pack/pack-812c1aec31507e1c3f731ae288aed0a80249a0f9.idx
+.git/objects/pack/pack-812c1aec31507e1c3f731ae288aed0a80249a0f9.pack
+.git/objects/pack/pack-812c1aec31507e1c3f731ae288aed0a80249a0f9.rev
 .git/refs/heads/main
 .github/workflows/ci.yml
 ARTIFACT_EVALUATION_README.md
@@ -48,7 +48,6 @@ ci-results/latest/lean-audit.log
 ci-results/latest/lean-build.log
 ci-results/latest/lean-version.log
 ci-results/latest/project-files.log
-ci-results/latest/results/audit_results.csv
 ci-results/latest/results/audit_summary.json
 ci-results/latest/summary.md
 experiments/run_distillation_audit.py
