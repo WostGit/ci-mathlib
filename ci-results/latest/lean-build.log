@@ -1,8 +1,8 @@
 info: pacxai_ci_mathlib: no previous manifest, creating one from scratch
 info: toolchain not updated; already up-to-date
-✔ [2/13] Built PACXAI.Core (275ms)
-✔ [3/13] Built PACXAI.Transcript (413ms)
-⚠ [4/13] Built PACXAI.Recovery (389ms)
+✔ [2/13] Built PACXAI.Core (263ms)
+✔ [3/13] Built PACXAI.Transcript (390ms)
+⚠ [4/13] Built PACXAI.Recovery (397ms)
 warning: PACXAI/Recovery.lean:54:124: This simp argument is unused:
   ih
 
@@ -11,12 +11,12 @@ Hint: Omit it from the simp argument list.
   ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲successCount, countWhere,̵ ̵i̵h̵]
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-✖ [5/13] Building PACXAI.Leakage.FiniteCapacity (345ms)
+✖ [5/13] Building PACXAI.Leakage.FiniteCapacity (344ms)
 trace: .> LEAN_PATH=/home/runner/work/ci-mathlib/ci-mathlib/.lake/build/lib/lean /home/runner/.elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lean /home/runner/work/ci-mathlib/ci-mathlib/PACXAI/Leakage/FiniteCapacity.lean -o /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/lib/lean/PACXAI/Leakage/FiniteCapacity.olean -i /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/lib/lean/PACXAI/Leakage/FiniteCapacity.ilean -c /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/ir/PACXAI/Leakage/FiniteCapacity.c --setup /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/ir/PACXAI/Leakage/FiniteCapacity.setup.json --json
 error: PACXAI/Leakage/FiniteCapacity.lean:13:66: unexpected token 'universe'; expected '_' or identifier
 error: PACXAI/Leakage/FiniteCapacity.lean:13:74: unexpected token ':'; expected identifier
 error: Lean exited with code 1
-✖ [6/13] Building PACXAI.InfoTheory.FiniteDistribution (440ms)
+✖ [6/13] Building PACXAI.InfoTheory.FiniteDistribution (394ms)
 trace: .> LEAN_PATH=/home/runner/work/ci-mathlib/ci-mathlib/.lake/build/lib/lean /home/runner/.elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lean /home/runner/work/ci-mathlib/ci-mathlib/PACXAI/InfoTheory/FiniteDistribution.lean -o /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/lib/lean/PACXAI/InfoTheory/FiniteDistribution.olean -i /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/lib/lean/PACXAI/InfoTheory/FiniteDistribution.ilean -c /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/ir/PACXAI/InfoTheory/FiniteDistribution.c --setup /home/runner/work/ci-mathlib/ci-mathlib/.lake/build/ir/PACXAI/InfoTheory/FiniteDistribution.setup.json --json
 error: PACXAI/InfoTheory/FiniteDistribution.lean:15:11: failed to synthesize instance of type class
   Repr (A✝ → Nat)
@@ -27,9 +27,9 @@ error: PACXAI/InfoTheory/FiniteDistribution.lean:24:38: failed to synthesize ins
 
 Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
 error: Lean exited with code 1
-✔ [9/13] Built PACXAI.Conditioning (232ms)
-✔ [10/13] Built PACXAI.Distillation (261ms)
-✔ [11/13] Built PACXAI.PAC.MonteCarlo (298ms)
+✔ [9/13] Built PACXAI.Conditioning (219ms)
+✔ [10/13] Built PACXAI.Distillation (266ms)
+✔ [11/13] Built PACXAI.PAC.MonteCarlo (296ms)
 Some required targets logged failures:
 - PACXAI.Leakage.FiniteCapacity
 - PACXAI.InfoTheory.FiniteDistribution
