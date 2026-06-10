@@ -25,5 +25,12 @@ import PACXAI
 #print axioms PACXAI.student_rate_lifts_to_transcript
 #print axioms PACXAI.conditional_student_attack_lifts_to_transcript
 #print axioms PACXAI.student_candidate_best_is_transcript_candidate_best_lifted
+#print axioms PACXAI.InfoTheory.deterministic_dpi_exact
+#print axioms PACXAI.InfoTheory.conditional_deterministic_dpi_exact
+#print axioms PACXAI.InfoTheory.infoGain_postprocess_exact
+#print axioms PACXAI.InfoTheory.fanoStyle_valid_student_to_transcript
+#print axioms PACXAI.InfoTheory.fanoStyle_budget_violation_lifts
+#print axioms PACXAI.PAC.monteCarlo_transcript_pass_implies_student_pass
+#print axioms PACXAI.PAC.monteCarlo_candidateClass_postprocess_eq
 EOF
 lake env lean /tmp/PACXAIPrint.lean
